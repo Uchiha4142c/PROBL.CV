@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo Robledo Tabilo | Portafolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#eef5fc;
+color:#24344d;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#082f69,#0d61bc,#2b9ded);
+color:white;
+padding:58px 20px 52px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+header:before,
+header:after{
+content:"";
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.1);
+}
+
+header:before{
+width:360px;
+height:360px;
+top:-230px;
+left:-120px;
+}
+
+header:after{
+width:300px;
+height:300px;
+right:-105px;
+bottom:-185px;
+}
+
+.avatar{
+width:88px;
+height:88px;
+margin:0 auto 14px;
+border:3px solid rgba(255,255,255,.85);
+border-radius:50%;
+display:grid;
+place-items:center;
+font-size:36px;
+background:rgba(255,255,255,.15);
+box-shadow:0 10px 24px rgba(3,34,80,.25);
+position:relative;
+z-index:1;
+}
+
+.eyebrow{
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+opacity:.85;
+position:relative;
+z-index:1;
+}
+
+header h1{
+font-size:45px;
+line-height:1.15;
+position:relative;
+z-index:1;
+}
+
+header h2{
+font-weight:400;
+margin-top:10px;
+font-size:22px;
+position:relative;
+z-index:1;
+}
+
+header > p:not(.eyebrow){
+margin-top:6px;
+opacity:.92;
+position:relative;
+z-index:1;
+}
+
+.header-actions{
+margin-top:22px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+position:relative;
+z-index:1;
+}
+
+.header-actions a{
+color:#0d4e9c;
+background:white;
+text-decoration:none;
+font-weight:600;
+padding:10px 16px;
+border-radius:999px;
+transition:.2s ease;
+}
+
+.header-actions a:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,32,80,.22);
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:38px 0;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+margin-bottom:25px;
+box-shadow:0 8px 28px rgba(21,70,120,.09);
+border:1px solid rgba(13,97,188,.08);
+transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(21,70,120,.14);
+}
+
+h3{
+color:#1565c0;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+}
+
+h3 i{
+width:34px;
+height:34px;
+display:grid;
+place-items:center;
+color:white;
+font-size:15px;
+border-radius:10px;
+background:linear-gradient(135deg,#1565c0,#42a5f5);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.item{
+background:#f0f6ff;
+padding:15px;
+border-radius:12px;
+border:1px solid #dcecff;
+transition:.2s ease;
+}
+
+.item:hover{
+background:#e4f1ff;
+transform:translateY(-2px);
+}
+
+.item i{
+color:#1565c0;
+font-size:18px;
+margin-right:8px;
+}
+
+.whatsapp-link{
+color:#333;
+display:block;
+text-decoration:none;
+}
+
+.whatsapp-link:hover{
+color:#0d47a1;
+}
+
+.contact-link{
+color:#333;
+display:block;
+text-decoration:none;
+}
+
+.contact-link:hover{
+color:#0d47a1;
+}
+
+.stat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:16px;
+margin-bottom:25px;
+}
+
+.stat{
+padding:18px;
+border-radius:16px;
+text-align:center;
+color:white;
+background:linear-gradient(135deg,#0d4e9c,#2493e4);
+box-shadow:0 8px 20px rgba(13,97,188,.18);
+}
+
+.stat i{
+font-size:25px;
+margin-bottom:5px;
+}
+
+.stat strong{
+display:block;
+font-size:24px;
+line-height:1.25;
+}
+
+.stat span{
+font-size:13px;
+opacity:.9;
+}
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+gap:15px;
+}
+
+.experience-card{
+padding:18px;
+border:1px solid #dcecff;
+border-radius:14px;
+background:linear-gradient(150deg,#f9fcff,#edf6ff);
+}
+
+.experience-card i{
+color:#1565c0;
+font-size:22px;
+margin-bottom:10px;
+}
+
+.experience-card h4{
+color:#0d47a1;
+font-size:16px;
+line-height:1.35;
+margin-bottom:5px;
+}
+
+.experience-card span{
+font-size:14px;
+color:#4d6684;
+}
+
+.clean-list{
+list-style:none;
+display:grid;
+gap:10px;
+}
+
+.clean-list li{
+padding:10px 12px;
+background:#f4f9ff;
+border-radius:10px;
+}
+
+.clean-list i{
+color:#1565c0;
+margin-right:9px;
+}
+
+button{
+padding:14px 20px;
+border:none;
+background:linear-gradient(135deg,#1565c0,#289ce9);
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+font-weight:600;
+box-shadow:0 8px 16px rgba(21,101,192,.2);
+}
+
+button:hover{
+background:#0b3b72;
+transform:translateY(-2px);
+}
+
+footer{
+background:#092f65;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+@media (max-width:600px){
+header{
+padding:44px 18px 40px;
+}
+
+header h1{
+font-size:34px;
+}
+
+header h2{
+font-size:19px;
+}
+
+.container{
+width:92%;
+}
+
+.card{
+padding:20px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
+
+<p class="eyebrow">PORTAFOLIO PROFESIONAL</p>
+
+<h1>Pablo Robledo Tabilo</h1>
+
+<h2>Ingeniero de Ejecución Industrial</h2>
+
+<p>Logística | Minería | SAP | Power BI | Excel</p>
+
+<div class="header-actions">
+
+<a href="mailto:probledotabilo@gmail.com"><i class="fa-solid fa-envelope"></i> Enviar correo</a>
+
+<a href="https://wa.me/56998797161" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="stat-grid">
+
+<div class="stat"><i class="fa-solid fa-briefcase"></i><strong>20+</strong><span>Años de experiencia</span></div>
+
+<div class="stat"><i class="fa-solid fa-industry"></i><strong>7</strong><span>Empresas destacadas</span></div>
+
+<div class="stat"><i class="fa-solid fa-graduation-cap"></i><strong>6</strong><span>Diplomados</span></div>
+
+<div class="stat"><i class="fa-solid fa-laptop-code"></i><strong>9+</strong><span>Herramientas digitales</span></div>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-user"></i>Perfil Profesional</h3>
+
+<p>
+
+Ingeniero de Ejecución Industrial con más de 20 años de experiencia en minería,
+logística, abastecimiento y administración de operaciones.
+
+Experiencia en CODELCO División Chuquicamata,
+División Gabriela Mistral,
+Minera Cerro Dominador,
+ECOMETALES,
+Aramark,
+Brinks Chile
+y SQM.
+
+Especialista en SAP MM, SAP PM, SAP FIORI,
+Power BI,
+Excel Avanzado,
+Office 365,
+Fracttal
+y Senegocia.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-address-card"></i>Información de Contacto</h3>
+
+<div class="grid">
+
+<div class="item">
+
+<a class="contact-link" href="mailto:probledotabilo@gmail.com">
+
+<i class="fa-solid fa-envelope"></i><b>Correo</b><br>
+
+probledotabilo@gmail.com
+
+</a>
+
+</div>
+
+<div class="item">
+
+<a class="whatsapp-link" href="https://wa.me/56998797161" target="_blank" rel="noopener">
+
+<i class="fa-brands fa-whatsapp"></i><b>Teléfono / WhatsApp</b><br>
+
++56 9 9879 7161
+
+</a>
+
+</div>
+
+<div class="item">
+
+<i class="fa-solid fa-location-dot"></i><b>Ciudad</b><br>
+
+Calama - Chile
+
+</div>
+
+<div class="item">
+
+<i class="fa-solid fa-clock"></i><b>Disponibilidad</b><br>
+
+Inmediata
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-briefcase"></i>Experiencia Profesional</h3>
+
+<div class="experience-grid">
+
+<div class="experience-card"><i class="fa-solid fa-boxes-stacked"></i><h4>Aramark &mdash; CODELCO DCH Facility</h4><span>Bodeguero (2026)</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Aramark &mdash; CODELCO DCH Mantenci&oacute;n</h4><span>Bodeguero</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-building"></i><h4>ECOMETALES</h4><span>Encargado de Administraci&oacute;n</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-chart-line"></i><h4>CODELCO DGM</h4><span>Analista SAP MSMIN</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-cart-shopping"></i><h4>EBM Chile</h4><span>Compras Internas</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-gears"></i><h4>Brinks Chile</h4><span>Planificador de Mantenimiento</span></div>
+
+<div class="experience-card"><i class="fa-solid fa-circle-check"></i><h4>Themac &mdash; SQM</h4><span>Control de Calidad</span></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-graduation-cap"></i>Educación</h3>
+
+<ul class="clean-list">
+
+<li><i class="fa-solid fa-building-columns"></i>Ingeniería de Ejecución Industrial</li>
+
+<li><i class="fa-solid fa-user-graduate"></i>Magíster en Educación Superior</li>
+
+<li><i class="fa-solid fa-book-open"></i>Ingeniería Civil Industrial (en curso)</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-certificate"></i>Diplomados</h3>
+
+<div class="grid">
+
+<div class="item"><i class="fa-solid fa-truck-fast"></i>Gesti&oacute;n de Operaciones y Log&iacute;stica</div>
+
+<div class="item"><i class="fa-solid fa-award"></i>Gesti&oacute;n de Calidad y Mejora Continua</div>
+
+<div class="item"><i class="fa-solid fa-file-signature"></i>Administraci&oacute;n de Contratos y Servicios</div>
+
+<div class="item"><i class="fa-solid fa-people-group"></i>Gesti&oacute;n de Personas y Liderazgo</div>
+
+<div class="item"><i class="fa-solid fa-school"></i>Educaci&oacute;n Superior</div>
+
+<div class="item"><i class="fa-solid fa-chart-pie"></i>Gesti&oacute;n de Datos y Herramientas Digitales</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-laptop-code"></i>Competencias</h3>
+
+<div class="grid">
+
+<div class="item"><i class="fa-solid fa-cubes"></i>SAP MM</div>
+
+<div class="item"><i class="fa-solid fa-gears"></i>SAP PM</div>
+
+<div class="item"><i class="fa-solid fa-table-cells-large"></i>SAP FIORI</div>
+
+<div class="item"><i class="fa-solid fa-chart-column"></i>Power BI</div>
+
+<div class="item"><i class="fa-solid fa-file-excel"></i>Excel Avanzado</div>
+
+<div class="item"><i class="fa-solid fa-database"></i>Oracle</div>
+
+<div class="item"><i class="fa-solid fa-cloud"></i>Office 365</div>
+
+<div class="item"><i class="fa-solid fa-list-check"></i>Fracttal</div>
+
+<div class="item"><i class="fa-solid fa-handshake"></i>Senegocia</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3><i class="fa-solid fa-folder-open"></i>Documentos</h3>
+
+<p>
+
+Para acceder al CV y certificados se solicitará una contraseña.
+
+</p>
+
+<br>
+
+<button onclick="descargas()">
+
+<i class="fa-solid fa-lock"></i> Acceder a CV y certificados
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<i class="fa-solid fa-user-tie"></i> &copy; Pablo Robledo Tabilo
+
+</footer>
+
+<script>
+
+function descargas(){
+
+let clave=prompt("Ingrese la contraseña");
+
+if(clave==="pablorovledo23"){
+
+window.open("https://drive.google.com/drive/folders/1bwTvOGRIACEZpAHBoRSbo6OjSCYZi_TI?usp=drive_link");
+
+}else{
+
+alert("Contraseña incorrecta");
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
